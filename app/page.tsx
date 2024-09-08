@@ -26,6 +26,7 @@ export default function Component() {
     setKaomojis(prevKaomojis => [...prevKaomojis, ...nextKaomojis])
     setHasNextPage(kaomojis.length + nextKaomojis.length < allKaomojis.length)
   }, [kaomojis])
+  
 
   const [sentryRef] = useInfiniteScroll({
     loading: false,
@@ -51,7 +52,7 @@ export default function Component() {
 
   useEffect(() => {
     loadMore()
-  }, [])
+  }, [loadMore])
 
   return (
     <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8">
