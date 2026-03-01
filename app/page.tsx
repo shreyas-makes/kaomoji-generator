@@ -15,6 +15,7 @@ const allKaomojis = [
   '(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)', '(╬ Ò﹏Ó)', '(≧◡≦)', '(´･ω･`)', '(´｡• ω •｡`)', '(▰˘◡˘▰)',
   '(◕‿◕✿)', '(ᵔᴥᵔ)', '(｡♥‿♥｡)', '(◠‿◠)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '(⌒ω⌒)', '(´∀`)'
 ]
+const appLogo = '¯\\_(ツ)_/¯'
 
 export default function Component() {
   const [kaomojis, setKaomojis] = useState(allKaomojis.slice(0, 20))
@@ -56,6 +57,10 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8">
+      <header className="mx-auto mb-8 max-w-4xl text-center">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{appLogo}</h1>
+        <p className="mt-2 text-sm text-gray-600 sm:text-base">{appLogo} kaomoji generator</p>
+      </header>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {kaomojis.map((kaomoji, index) => (
           <motion.div
